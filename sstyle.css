@@ -1,0 +1,108 @@
+/* تعریف فونت سفارشی iransans */
+@font-face {
+  font-family: "iransans";
+  src: url("fonts/Sans\ a4fran3.eot") format("eot");
+  src: url("fonts/Sans\ a4fran3.ttf") format("ttf");
+  src: url("fonts/Sans\ a4fran3.woff") format("woff");
+}
+
+/* تنظیمات عمومی برای همه عناصر */
+* {
+  margin: 0; /* حذف حاشیه پیش‌فرض */
+}
+
+body {
+  font-family: "iransans" !important; /* استفاده از فونت iransans برای متن‌ها */
+  background-color: #f5f5f5; /* رنگ زمینه صفحه */
+}
+
+a {
+  text-decoration: none; /* حذف خط زیر لینک‌ها */
+  color: #fff; /* رنگ متن لینک‌ها */
+}
+
+/* ---------------------------------------------------------------------------- */
+/* استایل‌های هدر */
+header {
+  background: #000036; /* رنگ زمینه هدر */
+  padding-top: 0%; /* فاصله داخلی بالای هدر */
+  min-height: 70px; /* حداقل ارتفاع هدر */
+  border-bottom: #77b5fe 3px solid; /* خط زیرین هدر */
+}
+
+header a {
+  color: #fff; /* رنگ متن لینک‌ها در هدر */
+  text-decoration: none; /* حذف خط زیر لینک‌ها */
+  text-transform: uppercase; /* تبدیل متن به حروف بزرگ */
+  font-size: 16px; /* اندازه فونت لینک‌ها */
+  margin-bottom: 0%; /* فاصله پایین لینک‌ها */
+}
+
+header ul {
+  padding: 0; /* حذف فاصله داخلی لیست */
+  list-style: none; /* حذف نقطه‌گذاری لیست */
+}
+
+header li {
+  position: relative; /* موقعیت نسبی آیتم‌های لیست */
+  top: 23px; /* فاصله از بالا */
+  float: right; /* قرار دادن آیتم‌ها به سمت راست */
+  display: inline; /* نمایش آیتم‌ها به صورت خطی */
+  padding: 0 20px 0 20px; /* فاصله بین آیتم‌های لیست */
+}
+
+header .logo img {
+  position: relative; /* موقعیت نسبی لوگو */
+  left: 5%; /* فاصله از چپ */
+  height: 80px; /* ارتفاع لوگو */
+  float: left; /* قرار دادن لوگو به سمت چپ */
+  margin: 0%; /* حذف فاصله خارجی لوگو */
+  padding: 0%; /* حذف فاصله داخلی لوگو */
+}
+
+header nav {
+  float: right; /* قرار دادن نوار ناوبری به سمت راست */
+  margin: 0%; /* حذف فاصله خارجی نوار ناوبری */
+  padding: 0%; /* حذف فاصله داخلی نوار ناوبری */
+}
+/* ---------------------------------------------------------------------------- */
+
+/* استایل‌های بخش پست */
+.post {
+  width: 90%; /* عرض پست */
+  margin: 20px 4%; /* فاصله خارجی پست */
+  padding: 10px; /* فاصله داخلی پست */
+  text-align: right; /* ترازبندی متن به سمت راست */
+  height: 200px; /* ارتفاع پست */
+  overflow: hidden; /* مخفی کردن محتوای اضافی */
+  background-color: #fff; /* رنگ زمینه پست */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* سایه برای پست */
+}
+
+/* استایل‌های تصویر پست */
+.postimg {
+  width: 30%; /* عرض تصویر پست */
+  padding: 8px 8px 8px 0; /* فاصله داخلی تصویر پست */
+  float: right; /* قرار دادن تصویر به سمت راست */
+  display: block; /* نمایش به صورت بلوکی */
+}
+
+.postimg img {
+  width: 100%; /* عرض تصویر */
+  height: 180px; /* ارتفاع تصویر */
+}
+
+.postimg::after,
+.postimg::before {
+  content: ""; /* محتوای خالی */
+  display: block; /* نمایش به صورت بلوکی */
+  clear: both; /* پاکسازی شناوری */
+}
+
+/* استایل‌های متن پست */
+.posttext {
+  width: 60%; /* عرض متن پست */
+  height: 80px; /* ارتفاع متن پست */
+  padding: 8px 0 8px 4px; /* فاصله داخلی متن پست */
+  font-size: 15px; /* اندازه فونت متن پست */
+}
