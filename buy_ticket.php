@@ -1,21 +1,15 @@
 <?php
-// وارد کردن فایل اتصال به پایگاه داده
 include 'db.php';
-// شروع جلسه (Session)
 session_start();
 
-// بررسی اینکه آیا کاربر وارد سیستم شده است
 if (!isset($_SESSION['username'])) {
-    // اگر کاربر وارد نشده باشد، او را به صفحه ورود هدایت می‌کنیم
     header("Location: login.php");
     exit();
 }
 
-// دریافت نام کاربری و نوع کاربر از جلسه
 $username = $_SESSION['username'];
 $user_type = $_SESSION['user_type'];
 
-// بررسی اینکه آیا کاربر فعلی ادمین است
 $is_admin = false;
 $sql = "SELECT * FROM admins WHERE username='$username'";
 $result = $conn->query($sql);
