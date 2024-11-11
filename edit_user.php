@@ -2,7 +2,6 @@
 session_start();
 include 'db.php';
 
-// Update user
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["id"]) && isset($_POST["username"]) && isset($_POST["password"])) {
         $id = $_POST["id"];
