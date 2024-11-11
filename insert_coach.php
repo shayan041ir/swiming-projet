@@ -2,20 +2,15 @@
 session_start();
 include 'db.php';
 
-// بررسی درخواست POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $coach_name = $_POST['coach_name'];
 
-    // درج نام مربی در دیتابیس
     $sql = "INSERT INTO coaches (name) VALUES ('$coach_name')";
     if ($conn->query($sql) === TRUE) {
-        // در صورت موفقیت، کاربر به صفحه داشبورد ادمین هدایت می‌شود
         header("Location: admin_dashboard.php?success=1");
     } else {
-        // در صورت خطا، پیغام خطا نمایش داده می‌شود
         echo "Error: " . $conn->error;
     }
-    // بستن اتصال به دیتابیس
     $conn->close();
 }
 ?>
@@ -26,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <th>Action</th>
             </tr>
             <?php
-            // بازیابی اطلاعات نظرات کاربران از پایگاه داده
             $sql = "SELECT * FROM coaches";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) { ?>
