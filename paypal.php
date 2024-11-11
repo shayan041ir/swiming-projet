@@ -1,25 +1,19 @@
 <?php
 session_start();
 
-// بررسی اینکه آیا اطلاعات مربوط به بلیط در نشست وجود دارد یا خیر
 if (!isset($_SESSION['count']) || !isset($_SESSION['ticket_price'])) {
-    // اگر اطلاعات بلیط موجود نباشد، کاربر به صفحه خرید بلیط هدایت می‌شود
     header('Location: buy_ticket.php');
     exit;
 }
 
-$ticket_count = $_SESSION['count']; // تعداد بلیط موجود در نشست را بارگیری می‌کند
-$ticket_price = $_SESSION['ticket_price']; // قیمت بلیط در نشست را بارگیری می‌کند
-$total_price = $ticket_count * $ticket_price; // محاسبه کل مبلغ پرداختی بر اساس تعداد و قیمت بلیط
+$ticket_count = $_SESSION['count']; 
+$ticket_price = $_SESSION['ticket_price'];
+$total_price = $ticket_count * $ticket_price;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // در این مرحله فرض می‌شود که پرداخت موفقیت‌آمیز بوده است
-    
-    // حذف اطلاعات مربوط به بلیط از نشست برای پایان جلسه فعلی
     unset($_SESSION['count']);
     unset($_SESSION['ticket_price']);
 
-    // نمایش پیام موفقیت و هدایت به صفحه داشبورد
     echo "<script>alert('خرید با موفقیت انجام شد'); window.location.href = 'dashboard.php';</script>";
     exit;
 }
