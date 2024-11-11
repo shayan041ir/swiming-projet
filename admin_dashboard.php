@@ -1,7 +1,5 @@
 <?php
-// وارد کردن فایل اتصال به پایگاه داده
 include 'db.php';
-// شروع جلسه (Session)
 session_start();
 ?>
 
@@ -9,12 +7,10 @@ session_start();
 <html>
 
 <head>
-    <!-- تنظیمات متا برای تنظیم کدگذاری کاراکترها و مقیاس نمایش -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <style>
-        /* تنظیمات استایل برای بدنه صفحه */
         body {
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
@@ -32,14 +28,12 @@ session_start();
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* تنظیمات استایل برای عنوان‌ها */
         h2,
         h3 {
             text-align: center;
             color: #333;
         }
 
-        /* تنظیمات استایل برای جداول */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -58,7 +52,6 @@ session_start();
             background-color: #f9f9f9;
         }
 
-        /* تنظیمات استایل برای فرم‌ها */
         form {
             text-align: center;
             margin-bottom: 20px;
@@ -89,7 +82,6 @@ session_start();
             background-color: #0056b3;
         }
 
-        /* تنظیمات استایل برای تراز وسط */
         .center {
             text-align: center;
             margin-top: 20px;
@@ -108,7 +100,6 @@ session_start();
             text-decoration: underline;
         }
 
-        /* تنظیمات استایل برای منوهای ناوبری */
         .nav-menu {
             display: flex;
             justify-content: center;
@@ -128,7 +119,6 @@ session_start();
             background-color: #0056b3;
         }
 
-        /* تنظیمات استایل برای دکمه بازگشت به بالا */
         #backToTopBtn {
             /* display: none; */
             position: fixed;
@@ -153,7 +143,6 @@ session_start();
 
 <body>
     <header>
-        <!-- منوهای ناوبری -->
         <div class="nav-menu">
             <a href="#manage-users">Manage Users</a>
             <a href="#manage-admins">Manage Admins</a>
@@ -174,7 +163,6 @@ session_start();
         <br>
 
         <div class="container" id="manage-users">
-            <!-- بخش مدیریت کاربران -->
             <h3>Manage Users</h3>
             <table>
                 <tr>
@@ -183,7 +171,6 @@ session_start();
                     <th>Action</th>
                 </tr>
                 <?php
-                // بازیابی اطلاعات کاربران از پایگاه داده
                 $sql = "SELECT * FROM users";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) { ?>
@@ -221,7 +208,6 @@ session_start();
 
 
         <div class="container" id="manage-admins">
-            <!-- بخش مدیریت ادمین‌ها -->
             <h3>Manage Admins</h3>
             <table>
                 <tr>
@@ -230,7 +216,6 @@ session_start();
                     <th>Action</th>
                 </tr>
                 <?php
-                // بازیابی اطلاعات ادمین‌ها از پایگاه داده
                 $sql = "SELECT * FROM admins";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) { ?>
@@ -268,7 +253,6 @@ session_start();
         <br>
 
         <div class="container" id="manage-tickets">
-            <!-- بخش مدیریت بلیط‌ها -->
             <h3>Manage Tickets</h3>
             <table>
                 <tr>
@@ -280,7 +264,6 @@ session_start();
                     <th>Action</th>
                 </tr>
                 <?php
-                // بازیابی اطلاعات بلیط‌ها از پایگاه داده
                 $sql = "SELECT * FROM tickets";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) { ?>
@@ -340,7 +323,6 @@ session_start();
                     <th>Action</th>
                 </tr>
                 <?php
-                // بازیابی اطلاعات نظرات کاربران از پایگاه داده
                 $sql = "SELECT * FROM comments";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) { ?>
@@ -384,7 +366,6 @@ session_start();
                     <th>coach</th>
                 </tr>
                 <?php
-                // بازیابی اطلاعات نظرات کاربران از پایگاه داده
                 $sql = "SELECT * FROM coaches";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) { ?>
@@ -413,7 +394,6 @@ session_start();
 
         </div>
 
-        <!-- بروزرسانی بخش تایمینگ سایت -->
         <br>
         <div class="container" id="update-text">
             <h3>update Text</h3>
@@ -436,7 +416,6 @@ session_start();
         <br>
 
         <?php
-        // دریافت محتوای posttext از دیتابیس
         $sql = "SELECT * FROM posttext";
         $result = $conn->query($sql);
         $posttexts = [];
