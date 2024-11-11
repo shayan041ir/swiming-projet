@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "DELETE FROM comments WHERE id='$id'";
     
     if ($conn->query($sql) === TRUE) {
-        // بر اساس نوع کاربر به مسیر مناسب هدایت شوید
         if ($_SESSION['user_type'] == 'admin') {
             header("Location: admin_dashboard.php");
         } else {
