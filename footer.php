@@ -8,7 +8,7 @@
       src: url(/font/vazir/vazir.woff2) format("woff2");
     }
         /* ========================================================================= */
-        /* Footer Section - بخش فوتر */
+
         footer {
             background: #000036;
             color: #fff;
@@ -20,18 +20,16 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            /* برای ریسپانسیو بودن بخش‌ها */
+
         }
 
         footer .footer-section {
             flex-basis: 30%;
-            /* عرض هر بخش در فوتر */
             margin: 10px 0;
         }
 
         footer .footer-section h3 {
             border-bottom: #77b5fe 2px solid;
-            /* خط زیرین عناوین */
             padding-bottom: 10px;
             margin-bottom: 10px;
         }
@@ -40,13 +38,11 @@
         footer .footer-section a {
             color: #fff;
             text-decoration: none;
-            /* حذف خط زیر لینک‌ها */
             margin: 5px 0;
         }
 
         footer .footer-section a:hover {
             text-decoration: underline;
-            /* زیرخط لینک‌ها در حالت هاور */
         }
 
         .footer-credit {
