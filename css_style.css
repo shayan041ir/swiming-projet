@@ -1,5 +1,4 @@
 :root {
-    /* تعریف رنگ‌های اولیه و ثانویه، رنگ متن و سایر متغیرهای رنگی */
     --primary: #605DFF;
     --primary-dark: #4a00e0;
     --primary-light: #5DA8FF;
@@ -12,14 +11,12 @@
 }
 
 * {
-    /* بازنشانی حاشیه و فاصله‌ها */
     margin: 0; 
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    /* تنظیمات عمومی برای بدنه صفحه */
     font-size: 16px;
     height: 100vh;
     padding: 1rem;
@@ -32,20 +29,17 @@ body {
 }
 
 .socials-row {
-    /* تنظیمات ردیف شبکه‌های اجتماعی */
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
 .socials-row img {
-    /* تنظیمات تصاویر شبکه‌های اجتماعی */
     width: 1.5rem;
     height: 1.5rem;
 }
 
 .socials-row>a {
-    /* تنظیمات لینک‌های شبکه‌های اجتماعی */
     padding: 0.5rem;
     border-radius: 10rem;
     width: 100%;
@@ -62,30 +56,25 @@ body {
 }
 
 .socials-row>a:hover {
-    /* تغییر رنگ پس‌زمینه لینک‌ها در حالت هاور */
     background: var(--social-background-hover);
 }
 
 .login-welcome-row {
-    /* تنظیمات ردیف خوش‌آمدگویی */
     margin-bottom: 1rem;
     text-align: center;
 }
 
 .welcome-message {
-    /* تنظیمات پیام خوش‌آمدگویی */
     max-width: 24rem;
 }
 
 .logo {
-    /* تنظیمات لوگو */
     height: 4rem;
     margin: 0 auto;
     color: var(--primary);
 }
 
 .my-form {
-    /* تنظیمات فرم ورود */
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -100,7 +89,6 @@ body {
 }
 
 .my-form__button {
-    /* تنظیمات دکمه فرم ورود */
     background: var(--primary);
     color: white;
     white-space: nowrap;
@@ -123,11 +111,9 @@ body {
 }
 
 .my-form__button:hover {
-    /* تغییر رنگ دکمه فرم ورود در حالت هاور */
     background: var(--primary-dark);
 }
 
-/* تنظیمات برای پوشش ورودی */
 .input__wrapper {
     position: relative;
     padding: 0.9375rem 0 0;
@@ -135,7 +121,6 @@ body {
 }
 
 .input__field {
-    /* تنظیمات فیلد ورودی */
     font-size: 1.5rem;
     color: var(--text);
     padding: 0.375rem 0;
@@ -153,17 +138,14 @@ body {
 }
 
 .input__field::placeholder {
-    /* تنظیمات مکان‌نمای فیلد ورودی */
     color: transparent;
 }
 
 .input__label {
-    /* تنظیمات برچسب ورودی */
     user-select: none;
 }
 
 .input__field:placeholder-shown~.input__label {
-    /* تنظیمات برچسب زمانی که مکان‌نما نشان داده می‌شود */
     cursor: text;
     color: var(--text);
     top: 0.8rem;
@@ -172,7 +154,6 @@ body {
 
 .input__label,
 .input__field:focus~.input__label {
-    /* تنظیمات برچسب زمانی که فیلد ورودی در فوکوس است */
     position: absolute;
     top: -0.8rem;
     display: block;
@@ -182,11 +163,9 @@ body {
 }
 
 .input__field:focus~.input__label {
-    /* تغییر رنگ برچسب در حالت فوکوس فیلد ورودی */
     color: var(--primary);
 }
 
 .input__field:focus {
-    /* تغییر رنگ حاشیه فیلد ورودی در حالت فوکوس */
     border-bottom: 3px solid var(--primary);
 }
