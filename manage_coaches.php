@@ -2,7 +2,7 @@
 session_start();
 include 'db.php';
 
-// بررسی درخواست POST
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $coach_id = $_POST['id'];
     $coach_name = $_POST['coach_name'];
