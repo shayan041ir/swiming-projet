@@ -1,25 +1,17 @@
 <?php
-// اتصال به فایل db.php برای برقراری ارتباط با پایگاه داده
 include 'db.php';
 
-// بررسی اینکه آیا درخواست به روش POST ارسال شده است
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // دریافت و ذخیره نام کاربری از فرم
     $username = $_POST['username'];
     
-    // هش کردن رمز عبور با استفاده از الگوریتم BCRYPT
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    // ساخت دستور SQL برای درج کاربر جدید در جدول users
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
 
-    // اجرای دستور SQL و بررسی موفقیت‌آمیز بودن آن
     if ($conn->query($sql) === TRUE) {
-        // نمایش پیام موفقیت و هدایت به صفحه ورود
         echo "Registration successful!";
         header("Location: login.php");
     } else {
-        // نمایش پیام خطا در صورت بروز مشکل در اجرای دستور SQL
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
@@ -34,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Sign Up</title>
     <link rel="stylesheet" href="css_style.css">
     <style>
-        /* استایل‌های CSS برای ظاهر صفحه */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -128,10 +119,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="container">
-        <!-- فرم ثبت نام که به فایل signup.php ارسال می‌شود -->
         <form class="my-form" method="post" action="signup.php">
             <div class="login-welcome-row">
-                <!-- لینک به لوگو و نمایش آن -->
                 <a href="#" title="Logo">
                     <img src="../ap/upload/img/nemayedakheli/aquaParkLogo.png" alt="Logo" class="logo">
                 </a>
@@ -139,22 +128,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Please fill in the details to sign up!</p>
             </div>
             <div class="input__wrapper">
-                <!-- فیلد ورود نام کاربری -->
                 <input type="text" id="username" name="username" required class="input__field" placeholder="Username" autocomplete="off">
                 <label for="username" class="input__label">Username</label>
             </div>
 
             <div class="input__wrapper">
-                <!-- فیلد ورود رمز عبور -->
                 <input id="password" type="password" class="input__field" placeholder="Password" name="password" required>
                 <label for="password" class="input__label">Password</label>
             </div>
 
-            <!-- دکمه ثبت نام -->
             <button type="submit" class="my-form__button">Sign Up</button>
 
             <div class="socials-row">
-                <!-- لینک به صفحه اصلی -->
                 <a href="http://127.0.0.1:5500/">Back to Main Page</a>
             </div>
         </form>
