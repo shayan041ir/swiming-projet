@@ -2,7 +2,6 @@
 session_start();
 include 'db.php';
 
-// واکشی اطلاعات تایم آقایان
 $sql_men = "SELECT content, timee FROM timings WHERE id = 1";
 $result_men = $conn->query($sql_men);
 
@@ -15,7 +14,7 @@ if ($result_men->num_rows > 0) {
   $men_timee = "No time available";
 }
 
-// واکشی اطلاعات تایم بانوان
+
 $sql_women = "SELECT content, timee FROM timings WHERE id = 2";
 $result_women = $conn->query($sql_women);
 
@@ -28,17 +27,15 @@ if ($result_women->num_rows > 0) {
   $women_timee = "No time available";
 }
 
-// واکشی نظرات کاربران
+
 $sql_comments = "SELECT * FROM comments WHERE approved=1";
 $result_comments = $conn->query($sql_comments);
 
-// واکشی اطلاعات مربی‌ها
 $sql_coaches = "SELECT name FROM coaches";
 $result_coaches = $conn->query($sql_coaches);
 
 
 
-// بستن اتصال به دیتابیس پس از واکشی تمامی اطلاعات
 $conn->close();
 ?>
 
@@ -49,9 +46,8 @@ $conn->close();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>پارک آبی</title>
-  <link rel="stylesheet" href="../styless.css"> <!-- دوتا نقطه برای ادرس دهی در php -->
+  <link rel="stylesheet" href="../styless.css"> 
   <style>
-    /* Hero Section - بخش هرو (تصویر بزرگ بالای صفحه) */
     .hero {
       background: rgba(0, 0, 0, 0.3) url("../ap/upload/img/nemayedakheli/headphoto.jpg") no-repeat center center/cover;
     }
