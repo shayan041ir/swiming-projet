@@ -1,20 +1,17 @@
 <?php
-include 'db.php'; // اتصال به پایگاه داده
-session_start(); // شروع جلسه
+include 'db.php'; 
+session_start();
 
 if (!isset($_SESSION['username'])) {
-    // اگر کاربر وارد نشده است، به صفحه ورود هدایت می‌شود
     header("Location: signin.php");
     exit();
 }
 
-$username = $_SESSION['username']; // گرفتن نام کاربری از جلسه
+$username = $_SESSION['username']; 
 
-// کوئری برای دریافت تیکت‌های کاربر وارد شده
 $sql_tickets = "SELECT * FROM tickets WHERE username='$username'";
 $result_tickets = mysqli_query($conn, $sql_tickets);
 
-// کوئری برای دریافت نظرات کاربر وارد شده
 $sql_comments = "SELECT * FROM comments WHERE user='$username'";
 $result_comments = mysqli_query($conn, $sql_comments);
 ?>
